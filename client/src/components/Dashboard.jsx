@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button} from 'react-bootstrap'
 import Sidebar from './Sidebar'
+import ChatWindow from './ChatWindow'
+
 const Dashboard = (props) => {
   return (
     <div style={{width:'90vw'}}>
@@ -10,7 +12,7 @@ const Dashboard = (props) => {
       </div>
       <div className="d-flex" style={{ height: '83vh' }}>
         <Sidebar id={props.id} />
-    {/* Chat Window  */}
+        {/* <ChatWindow /> */}
     </div>
     </div>
   )
