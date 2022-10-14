@@ -1,8 +1,11 @@
 import React from 'react'
 import {Modal,Form,Button} from 'react-bootstrap';
+import { useContacts } from "../../contexts/ContactsProvider";
+
 const ContactModal = ({closeModal}) => {
   const idRef = React.useRef();
   const nameRef = React.useRef();
+  const  {createContacts} = useContacts()
   return (
     <>
     <Modal.Header closeButton={true}  >
@@ -12,7 +15,7 @@ const ContactModal = ({closeModal}) => {
       <Modal.Body>
         <Form onSubmit={e=>{
           e.preventDefault();
-          //creating contact here
+          createContacts({id:idRef.current.value,name:nameRef.current.value})
           closeModal();
         }}>
           <Form.Group>
